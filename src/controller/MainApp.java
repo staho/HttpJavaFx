@@ -1,6 +1,8 @@
 package controller;
 
 import javafx.application.Application;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
@@ -10,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * Created by staho on 23.05.2017.
@@ -18,6 +21,7 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     private DatePickerController dateController;
+    private ChartController chartController;
 
     @Override
     public void start(Stage primaryStage){
@@ -55,6 +59,7 @@ public class MainApp extends Application {
             rootLayout.setLeft(datePicker);
 
             dateController = loader.getController();
+            dateController.setMainApp(this);
 
         } catch (IOException e){
             e.printStackTrace();
@@ -66,15 +71,25 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("../view/lineChartLayout.fxml"));
 
-            LineChart<Number, Number> lineChart = loader.load();
+            LineChart<Date, Number> lineChart = loader.load();
             rootLayout.setCenter(lineChart);
+            chartController = loader.getController();
 
         } catch (IOException e){
             e.printStackTrace();
         }
     }
     public void handleCheck(LocalDate begin, LocalDate end){
+        LineChart<Date, Number> lineChart = chartController.getLineChart();
+        final DrawerTask drawerTask = new DrawerTask(lineChart, begin, end);
 
+        new Thread(drawerTask).start();
+        drawerTask.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+            @Override
+            public void handle(WorkerStateEvent event) {
+                System.out.println("Drawing task succed");
+            }
+        });
     }
 
     public static void main(String[] args){

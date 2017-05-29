@@ -23,6 +23,9 @@ public class ChartController {
         xAxis.setLabel("Date");
     }
 
+    public LineChart<Date, Number> getLineChart(){
+        return lineChart;
+    }
 
 
 }
