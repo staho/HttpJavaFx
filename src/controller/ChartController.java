@@ -24,9 +24,11 @@ public class ChartController {
     public void initialize(){
         xAxis.setLabel("Date");
         yAxis.setAutoRanging(false);
-        yAxis.setLowerBound(0.21);
-        yAxis.setUpperBound(0.29);
+        yAxis.setLowerBound(0.23);
+        yAxis.setUpperBound(0.24);
         series = new XYChart.Series();
+        series.setName("EUR - PLN");
+
         lineChart.getData().add(series);
 
     }

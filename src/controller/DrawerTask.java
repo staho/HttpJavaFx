@@ -20,6 +20,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -29,7 +30,6 @@ import java.util.Date;
  * Created by staho on 23.05.2017.
  */
 public class DrawerTask extends Task {
-    private LineChart lineChart;
     private XYChart.Series series;
     private LocalDate begin;
     private LocalDate end;
@@ -37,7 +37,6 @@ public class DrawerTask extends Task {
 
     @Override
     protected Object call() throws Exception{
-        ExchangeRate temp = null;
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
         for (LocalDate date = begin; !date.isEqual(end.plusDays(1)); date = date.plusDays(1)) {
@@ -51,7 +50,7 @@ public class DrawerTask extends Task {
 
             ExchangeRate ex = mapper.readValue(in, ExchangeRate.class);
             in.close();
-            Platform.runLater(() -> series.getData().add(new XYChart.Data(ex.getDate().toString(), ex.getRates().get("EUR"))));
+            Platform.runLater(() -> series.getData().add(new XYChart.Data(df.format(ex.getDate()), ex.getRates().get("EUR"))));
 
         }
         //Platform.runLater(() -> lineChart.getData().add(series));
@@ -61,7 +60,6 @@ public class DrawerTask extends Task {
     }
 
     public DrawerTask(XYChart.Series series, LocalDate begin, LocalDate end){
-        this.lineChart = lineChart;
         this.series = series;
         this.begin = begin;
         this.end = end;

@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08f02394-de7e-40c0-b831-82811ca8c131" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/controller/DataDownloader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/DateAxis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/model/ReflectionUtils.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/ChartController.java" afterPath="$PROJECT_DIR$/src/controller/ChartController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/DrawerTask.java" afterPath="$PROJECT_DIR$/src/controller/DrawerTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/MainApp.java" afterPath="$PROJECT_DIR$/src/controller/MainApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/ExchangeRate.java" afterPath="$PROJECT_DIR$/src/model/ExchangeRate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/lineChartLayout.fxml" afterPath="$PROJECT_DIR$/src/view/lineChartLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/datePickerLayout.fxml" afterPath="$PROJECT_DIR$/src/view/datePickerLayout.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/rootLayout.fxml" afterPath="$PROJECT_DIR$/src/view/rootLayout.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,6 +15,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/HttpJavaFx$MainApp.coverage" NAME="MainApp Coverage Results" MODIFIED="1496183454859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -38,10 +39,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
               <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#405#406#0" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,8 +57,8 @@
       <file leaf-file-name="DrawerTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/DrawerTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="36" lean-forward="false" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+            <state relative-caret-position="452">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,20 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/javafx-src.zip!/javafx/concurrent/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20835">
-              <caret line="1450" column="0" lean-forward="false" selection-start-line="1450" selection-start-column="0" selection-end-line="1450" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ChartController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/ChartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="283">
               <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -131,8 +119,8 @@
         <option value="$PROJECT_DIR$/src/controller/DataDownloader.java" />
         <option value="$PROJECT_DIR$/src/controller/MainApp.java" />
         <option value="$PROJECT_DIR$/src/model/ExchangeRate.java" />
-        <option value="$PROJECT_DIR$/src/controller/DrawerTask.java" />
         <option value="$PROJECT_DIR$/src/view/lineChartLayout.fxml" />
+        <option value="$PROJECT_DIR$/src/controller/DrawerTask.java" />
         <option value="$PROJECT_DIR$/src/controller/ChartController.java" />
       </list>
     </option>
@@ -695,30 +683,33 @@
       <workItem from="1495796358718" duration="11988000" />
       <workItem from="1496139155419" duration="1296000" />
       <workItem from="1496142204056" duration="2761000" />
-      <workItem from="1496146288926" duration="26000" />
+      <workItem from="1496146288926" duration="1947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28152000" />
+    <option name="totallyTimeSpent" value="30073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -729,7 +720,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -754,18 +744,6 @@
           <line>89</line>
           <properties />
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/DrawerTask.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/DrawerTask.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="12" />
@@ -1186,27 +1164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/DrawerTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="36" lean-forward="false" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/ExchangeRate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/lineChartLayout.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1218,9 +1175,27 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/ExchangeRate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/DrawerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ChartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="283">
           <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
