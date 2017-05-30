@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -71,7 +72,7 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("../view/lineChartLayout.fxml"));
 
-            LineChart<Date, Number> lineChart = loader.load();
+            LineChart<String, Double> lineChart = loader.load();
             rootLayout.setCenter(lineChart);
             chartController = loader.getController();
 
@@ -80,8 +81,11 @@ public class MainApp extends Application {
         }
     }
     public void handleCheck(LocalDate begin, LocalDate end){
-        LineChart<Date, Number> lineChart = chartController.getLineChart();
-        final DrawerTask drawerTask = new DrawerTask(lineChart, begin, end);
+        //LineChart<String, Double> lineChart = chartController.getLineChart();
+
+        XYChart.Series series = chartController.getSeries();
+
+        final DrawerTask drawerTask = new DrawerTask(series, begin, end);
 
         new Thread(drawerTask).start();
         drawerTask.setOnSucceeded(new EventHandler<WorkerStateEvent>() {

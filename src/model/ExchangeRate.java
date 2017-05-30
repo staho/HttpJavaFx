@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class ExchangeRate {
     private String base;
-    private LocalDate date;
+    private Date date;
     private Map<String, Double> rates;
 
     public String getBase() {
@@ -20,11 +20,11 @@ public class ExchangeRate {
         this.base = base;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

@@ -1,5 +1,6 @@
 package controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.value.ChangeListener;
@@ -14,6 +15,12 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import model.ExchangeRate;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
@@ -22,8 +29,8 @@ import java.util.Date;
  * Created by staho on 23.05.2017.
  */
 public class DrawerTask extends Task {
-    private LineChart<Date, Number> lineChart;
-    private XYChart.Series<Date, Number> series;
+    private LineChart lineChart;
+    private XYChart.Series series;
     private LocalDate begin;
     private LocalDate end;
 
@@ -31,45 +38,31 @@ public class DrawerTask extends Task {
     @Override
     protected Object call() throws Exception{
         ExchangeRate temp = null;
-        DataDownloader dataDownloaderTask = new DataDownloader(begin, end);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
-        new Thread(dataDownloaderTask).start();
+        for (LocalDate date = begin; !date.isEqual(end.plusDays(1)); date = date.plusDays(1)) {
+            String urlString = "http://api.fixer.io/" + date + "?base=PLN";
+            System.out.println("url string: " + urlString);
+            URL url = new URL(urlString);
 
-            dataDownloaderTask.valueProperty().addListener((observable, oldValue, newValue) -> Platform.runLater(() -> {
-                ExchangeRate temp1 = (ExchangeRate) dataDownloaderTask.getValue();
+            URLConnection urlCon = url.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(urlCon.getInputStream()));
+            ObjectMapper mapper = new ObjectMapper();
 
-                series.getData().add(new XYChart.Data<>(Date.from(temp1.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant()), temp1.getRates().get("EUR")));
-            }));
-        series.getData().add(new XYChart.Data<Date, Number>(new Date(2017, 11, 8), new Number() {
-            @Override
-            public int intValue() {
-                return 5;
-            }
+            ExchangeRate ex = mapper.readValue(in, ExchangeRate.class);
+            in.close();
+            Platform.runLater(() -> series.getData().add(new XYChart.Data(ex.getDate().toString(), ex.getRates().get("EUR"))));
 
-            @Override
-            public long longValue() {
-                return 5;
-            }
-
-            @Override
-            public float floatValue() {
-                return 5;
-            }
-
-            @Override
-            public double doubleValue() {
-                return 5;
-            }
-        }));
-        Platform.runLater(() -> lineChart.getData().add(series));
+        }
+        //Platform.runLater(() -> lineChart.getData().add(series));
 
 
         return null;
     }
 
-    public DrawerTask(LineChart<Date,Number> lineChart, LocalDate begin, LocalDate end){
+    public DrawerTask(XYChart.Series series, LocalDate begin, LocalDate end){
         this.lineChart = lineChart;
-        this.series = new XYChart.Series<>();
+        this.series = series;
         this.begin = begin;
         this.end = end;
         //this.valueProperty = null;

@@ -1,11 +1,10 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
-import model.DateAxis;
-
-import java.util.Date;
+import javafx.scene.chart.XYChart;
 
 /**
  * Created by staho on 23.05.2017.
@@ -13,19 +12,30 @@ import java.util.Date;
 public class ChartController {
 
     @FXML
-    private LineChart<Date, Number> lineChart;
+    private LineChart lineChart;
 
-    private final DateAxis xAxis = new DateAxis();
-    private final NumberAxis yAxis = new NumberAxis();
+    private XYChart.Series series;
+
+    private final CategoryAxis xAxis = new CategoryAxis();
+    @FXML
+    private NumberAxis yAxis;
 
     @FXML
     public void initialize(){
         xAxis.setLabel("Date");
+        yAxis.setAutoRanging(false);
+        yAxis.setLowerBound(0.21);
+        yAxis.setUpperBound(0.29);
+        series = new XYChart.Series();
+        lineChart.getData().add(series);
+
     }
 
-    public LineChart<Date, Number> getLineChart(){
+    public LineChart getLineChart(){
         return lineChart;
     }
-
+    public XYChart.Series getSeries(){
+        return series;
+    }
 
 }
